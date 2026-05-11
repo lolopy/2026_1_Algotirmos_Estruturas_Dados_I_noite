@@ -1,27 +1,36 @@
 from Pilha import Pilha
+from Autor import Autor
+from Livro import Livro
 
 pilha = Pilha()
+
+# Criar autores
+autor1 = Autor(nome='Machado de Assis', ano_nascimento=1839)
+autor2 = Autor(nome='Clarice Lispector', ano_nascimento=1920)
+autor3 = Autor(nome='Machado de Assis', ano_nascimento=1839)
+
+# Adicionar livros na pilha
+pilha.add(Livro('Dom Casmurro', 256, autor1))
+pilha.add(Livro('A Hora da Estrela', 96, autor2))
+pilha.add(Livro('Memórias Póstumas de Brás Cubas', 288, autor3))
+
+# Imprimir pilha de livros
 pilha.imprimir()
 
-pilha.add( "João" )
-pilha.add( "Maria" )
-pilha.add( "José" )
-pilha.remover()
-pilha.add( "Júlia" )
-pilha.remover()
+# Contar livros por autor
+pilha.contar_por_autor('Machado de Assis')
+pilha.contar_por_autor('Clarice Lispector')
+
+# Remover livros da pilha
 pilha.remover()
 pilha.remover()
 
+# Imprimir pilha após remoções
+pilha.imprimir()
 
-# FUAQ implementa uma pilha de livro.
-# Cada livro deverá conter o título, a quantidade de página e 
-# o autor, sendo que o autor deverá conter nome, 
-# e ano de nascimento.
-# Implemente um método para adicionar livros na pilha,
-# um método para imprimir a pilha de livros,
-# um método para remover um livro da pilha 
-# e um método que o usuário informa o nome do autor e 
-# lhe é informado quantos livros tem na pilha com este autor
+# Contar novamente depois de remover
+pilha.contar_por_autor('Machado de Assis')
+
 
 
 
